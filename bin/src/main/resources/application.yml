@@ -1,0 +1,14 @@
+spring:
+    application:
+        name: EMS-CONFIG-SERVER
+    cloud:
+      config:
+        server:
+          git:
+            uri: 
+            #Verify any repository issue in service startup
+            clone-on-start: true
+server:
+    port: 4341
+    
+management.security.enabled: false   
