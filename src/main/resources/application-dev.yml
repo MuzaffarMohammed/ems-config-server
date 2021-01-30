@@ -5,21 +5,22 @@
 # EUREKA.INSTANCE.HTTP.PROTOCOL - default(http) , could be given as https
 # EUREKA.INSTANCE.ADDRESS - default(localhost)
 # EUREKA.INSTANCE.PORT - default(4340)
+# CONFIG.SERVER.LOCAL.DIR - default(your local system)
 ##########################################################
 server:
     port: ${CONFIG-SERVER-PORT:4341}
 spring:
     application:
         name: EMS-CONFIG-SERVER
+    profiles:
+      active:
+        - dev
     cloud:
       config:
         server:
-          git:
-            uri: https://github.com/MuzaffarMohammed/ems-config-properties.git
-            username: MuzaffarMohammed
-            password: git1543@
-            #Verify any repository issue in service startup
-            clone-on-start: true
+          native:
+            search-locations:
+            - ${CONFIG.SERVER.LOCAL.DIR:file:///C:/Users/1025376/Desktop/Projects/eduMSApplication/ems-config-properties}
 management:
   endpoints:
     web:

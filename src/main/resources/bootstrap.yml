@@ -1,0 +1,11 @@
+#########################################################
+# Classpath properties:
+# 
+# CONFIG.SERVER.HTTP.PROTOCOL - default(http) , could be given as https
+# CONFIG.SERVER.ADDRESS - default(localhost)
+# CONFIG.SERVER.PORT - default(4341)
+##########################################################
+spring:
+    profiles:
+      active:
+        - dev 
